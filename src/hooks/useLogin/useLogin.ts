@@ -2,6 +2,9 @@ import {useForm} from 'react-hook-form';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {z} from 'zod';
 import {useState} from 'react';
+import axios from 'axios';
+import {base_url} from '../../consts/consts';
+import {Alert} from 'react-native';
 
 export const useLogin = () => {
   const [loading, setLoading] = useState<boolean>(false);
@@ -28,7 +31,21 @@ export const useLogin = () => {
 
   const onSubmit = () => {
     setLoading(true);
-    setTimeout(() => setLoading(false), 2000);
+    onSignUp();
   };
+
+  const onSignUp = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.get(`${base_url}/signIn`);
+      setLoading(false);
+      if (response.status === 200) {
+        Alert.alert('Hello');
+      }
+    } catch (error) {
+      setLoading(false);
+    }
+  };
+
   return {loading, onSubmit: handleSubmit(onSubmit), control, errors};
 };
