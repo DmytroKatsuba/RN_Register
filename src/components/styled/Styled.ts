@@ -62,6 +62,7 @@ export const Display = styled(StyledText)`
   font-size: 32px;
   font-family: 'Inter-Regular';
   font-weight: 600;
+  text-align: center;
 `;
 
 export const FlexWrapper = styled(View)<TFlexWrapper>`
@@ -75,6 +76,15 @@ export const FlexWrapper = styled(View)<TFlexWrapper>`
   max-width: 100%;
 
   ${props => MARGIN(props)}
+`;
+
+export const Container = styled(View)<TFlexWrapper>`
+  width: ${({width}) => width || '100%'};
+  height: ${({height}) => height || '100%'};
+  padding: 16px;
+  background-color: white;
+  justify-content: ${({justify}) => justify || 'center'};
+  display: flex;
 `;
 
 export const Hr = styled(View)<THr>`

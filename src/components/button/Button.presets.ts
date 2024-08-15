@@ -1,7 +1,7 @@
 import {StyleSheet, TextStyle, ViewStyle} from 'react-native';
 
 const BASE: ViewStyle = {
-  paddingVertical: 16,
+  paddingVertical: 8,
   borderRadius: 8,
   alignItems: 'center',
   backgroundColor: '#30B0C7',
@@ -40,8 +40,8 @@ export const additionalStyles = StyleSheet.create<IButtonAdditionalStyles>({
     fontFamily: 'Inter-Regular',
   },
   primaryDisabledPresetContainer: {
-    backgroundColor: '#30B0C7',
-    borderColor: '#30B0C7',
+    backgroundColor: '#30B0C740',
+    borderColor: '#30B0C740',
   },
 
   textPresetTitle: {

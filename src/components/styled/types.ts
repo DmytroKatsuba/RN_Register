@@ -43,12 +43,16 @@ export const MARGIN = ({
   mBottom = '0px',
   mRight = '0px',
   mLeft = '0px',
+  pRight = '0px',
+  pLeft = '0px',
 }: TMargin) => {
   return css`
     margin-top: ${mTop};
     margin-bottom: ${mBottom};
     margin-left: ${mLeft};
     margin-right: ${mRight};
+    padding-left: ${pLeft};
+    padding-right: ${pRight};
   `;
 };
 
@@ -75,4 +79,6 @@ export type TMargin = {
   mLeft?: string;
   mRight?: string;
   mBottom?: string;
+  pLeft?: string;
+  pRight?: string;
 };
